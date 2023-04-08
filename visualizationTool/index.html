@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<body>
+    <select name="Theme"
+        onchange="input_file = this.options[this.selectedIndex].value; graph_init(this.options[this.selectedIndex].value);">
+        <option value="./data/coco.json" selected>COCO</option>
+        <option value="./data/youbike.json">YouBike</option>
+    </select>
+    <div id="nodeArea"></div>
+    <div id="threshold">Threshold: <span></span><span id="status"></span></div>
+
+    <div id="sliderSVG"></div>
+    <div id="searchBtn">
+        <input type="text" id="filterObj" placeholder="Search for names.." title="Type in a name">
+
+        <button id="confirmBtn" value="default">Search</button>
+    </div>
+
+    <div id="globalSVG"></div>
+    <div id="treeSVG"></div>
+    <div id="tableArea"></div>
+
+</body>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3-hierarchy.v1.min.js"></script>
+<script src="https://d3js.org/d3-shape.v1.min.js"></script>
+<script src="https://d3js.org/d3-path.v1.min.js"></script>
+
+<script src="https://d3js.org/d3-color.v1.min.js" type="text/javascript"></script>
+<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js" type="text/javascript"></script>
+<script src="https://d3js.org/d3-scale.v3.min.js"></script>
+
+<script type="text/javascript" src="./js/jLouvain.js"></script>
+<script type="text/javaScript" src="./js/jsnetworkx.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<!-- <link rel="stylesheet" href="/resources/demos/style.css" /> -->
+
+<script src="./js/variable.js"></script>
+<script src="./js/basic.js"></script>
+<script src="./js/search_btn.js"></script>
+<script src="./js/graph_init.js"></script>
+
+<script>
+    var default_selected = "./data/coco.json";
+    graph_init(default_selected);
+</script>
